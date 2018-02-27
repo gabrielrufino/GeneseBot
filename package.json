@@ -1,0 +1,27 @@
+{
+  "name": "genesebot",
+  "version": "1.0.0",
+  "description": "Telegram chatbot",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabrielrufino/GeneseBot.git"
+  },
+  "keywords": [
+    "chatbot",
+    "Telegram"
+  ],
+  "author": "Gabriel Rufino",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gabrielrufino/GeneseBot/issues"
+  },
+  "homepage": "https://github.com/gabrielrufino/GeneseBot#readme",
+  "dependencies": {
+    "telegram-node-bot": "^4.0.5"
+  }
+}
