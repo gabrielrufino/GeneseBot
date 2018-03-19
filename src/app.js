@@ -5,30 +5,44 @@ const TelegramBaseController = Telegram.TelegramBaseController
 const TextCommand = Telegram.TextCommand
 
 const token = ''
-const chatbot = new Telegram.Telegram(token)
+const GeneseBot = new Telegram.Telegram(token)
 
 class EventsController extends TelegramBaseController {
-    startAction(scope) {
-        let msg = 'Wellcome! I\'m GeneseBot. Can i help you?'
-        scope.sendMessage(msg) 
+    startCommand(scope) {
+        let message = 'Wellcome! I\'m GeneseBot. Can i help you?'
+        scope.sendMessage(message) 
     }
-    helpAction(scope) {
-        let msg = 'How can i help you?'
-        scope.sendMessage(msg)
+    
+    helpCommand(scope) {
+        let message = 'How can i help you?'
+        scope.sendMessage(message)
     }
+
+    dateCommand(scope) {
+        let message = new Date()
+        scope.sendMessage(message.toString())
+    }
+
     get routes() {
         return {
-            'start': 'startAction',
-            'help': 'helpAction'
+            'start': 'startCommand',
+            'help': 'helpCommand',
+            'date': 'dateCommand'
         }
     }
 }
 
-chatbot.router
+GeneseBot.router
     .when(
-        new TextCommand('/start', 'start'), new EventsController()
+        new TextCommand('/start', 'start'),
+        new EventsController()
     )   
     .when(
-        new TextCommand('/help', 'help'), new EventsController()
+        new TextCommand('/help', 'help'),
+        new EventsController()
     )
-       
+    .when(
+        new TextCommand('/date', 'date'),
+        new EventsController()
+    )
+    
