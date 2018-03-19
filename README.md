@@ -9,7 +9,7 @@ cd GeneseBot
 
 npm install
 
-##Commands list
+## Commands list
 
 start - Call the bot
 
