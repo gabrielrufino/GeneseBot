@@ -4,6 +4,7 @@ My first chatbot
 ## Install
 
 git clone https://github.com/gabrielrufino/GeneseBot
+
 cd GeneseBot
 npm install
 
