@@ -1,6 +1,8 @@
 'use strict'
 
+const request = require('request')
 const Telegram = require('telegram-node-bot')
+
 const TelegramBaseController = Telegram.TelegramBaseController
 const TextCommand = Telegram.TextCommand
 
@@ -23,11 +25,19 @@ class EventsController extends TelegramBaseController {
         scope.sendMessage(message.toString())
     }
 
+    bitcoinCommand(scope) {
+        request('https://www.mercadobitcoin.net/api/BTC/ticker/', function (error, response, body) {
+            let message = body.toString()
+            scope.sendMessage(message)
+        })
+    }
+
     get routes() {
         return {
             'start': 'startCommand',
             'help': 'helpCommand',
-            'date': 'dateCommand'
+            'date': 'dateCommand',
+            'bitcoin': 'bitcoinCommand'
         }
     }
 }
@@ -45,4 +55,7 @@ GeneseBot.router
         new TextCommand('/date', 'date'),
         new EventsController()
     )
-    
+    .when(
+        new TextCommand('/bitcoin', 'bitcoin'),
+        new EventsController()
+    )
