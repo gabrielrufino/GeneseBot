@@ -1,11 +1,11 @@
 {
   "name": "genesebot",
-  "version": "1.0.0",
-  "description": "My first chatbot",
-  "main": "app.js",
+  "version": "2.0.0",
+  "description": "The general purpose chatbot",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/app"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",

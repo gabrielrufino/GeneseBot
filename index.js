@@ -1,11 +1,7 @@
 'use strict'
 
 const request = require('request')
-const TelegramBot = require('node-telegram-bot-api')
-
-const token = '540565063:AAGAS11IsUjQ1KkTC1doRhvWmR18Aq0Xtl4'
-
-const bot = new TelegramBot(token, {polling: true})
+const bot = require('./src/bot')
 
 bot.onText(/\/start/, (msg) => {
   const chatId = msg.chat.id
