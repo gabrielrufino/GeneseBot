@@ -1,5 +1,3 @@
-'use strict'
-
 const request = require('request')
 const bot = require('./src/bot')
 
@@ -33,4 +31,11 @@ bot.onText(/\/bitcoin/, (msg) => {
       bot.sendMessage(chatId, resp)
     }
   })
+})
+
+bot.onText(/\/echo (.+)/, (msg, match) => {
+  const chatId = msg.chat.id
+  const resp = match[1]
+
+  bot.sendMessage(chatId, resp)
 })

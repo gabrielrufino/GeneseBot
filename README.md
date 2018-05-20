@@ -18,3 +18,4 @@ The general purpose chatbot.
 /help - Help message<br>
 /date - Current date and time<br>
 /bitcoin - Current info about bitcoin 
+/echo - Print command 
