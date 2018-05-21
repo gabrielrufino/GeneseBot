@@ -1,41 +1,40 @@
-const request = require('request')
 const bot = require('./src/bot')
+const response = require('./src/response')
 
 bot.onText(/\/start/, (msg) => {
   const chatId = msg.chat.id
-  const resp = 'Wellcome! I\'m GeneseBot, a chatbot ready to the hard work :D'
+  const resp = response.start
 
   bot.sendMessage(chatId, resp)
 })
 
 bot.onText(/\/help/, (msg) => {
   const chatId = msg.chat.id
-  const resp = 'How can i help you?'
+  const resp = response.help
 
   bot.sendMessage(chatId, resp)
 })
 
 bot.onText(/\/date/, (msg) => {
   const chatId = msg.chat.id
-  const resp = Date()
+  const resp = response.date()
 
   bot.sendMessage(chatId, resp)
 })
 
 bot.onText(/\/bitcoin/, (msg) => {
   const chatId = msg.chat.id
+  const resp = response.bitcoin()
 
-  request('https://www.mercadobitcoin.net/api/BTC/ticker/', (error, response, body) => {
-    if (!error) {
-      const resp = body.toString()
-      bot.sendMessage(chatId, resp)
-    }
-  })
+  resp
+    .then((response) => {
+      bot.sendMessage(chatId, JSON.stringify(response.data))
+    })
 })
 
 bot.onText(/\/echo (.+)/, (msg, match) => {
   const chatId = msg.chat.id
-  const resp = match[1]
+  const resp = response.echo(match)
 
   bot.sendMessage(chatId, resp)
 })

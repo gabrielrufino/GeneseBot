@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/gabrielrufino/GeneseBot#readme",
   "dependencies": {
-    "node-telegram-bot-api": "^0.30.0",
-    "request": "^2.85.0"
+    "axios": "^0.18.0",
+    "node-telegram-bot-api": "^0.30.0"
   }
 }

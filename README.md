@@ -17,5 +17,5 @@ The general purpose chatbot.
 /start - Call the bot<br>
 /help - Help message<br>
 /date - Current date and time<br>
-/bitcoin - Current info about bitcoin 
+/bitcoin - Current info about bitcoin<br>
 /echo - Print command 
