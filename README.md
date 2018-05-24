@@ -12,10 +12,14 @@ The general purpose chatbot.
   npm install
 </pre>
 
+## Put your token
+You must open the file src/bot.js and fill in the variable <pre>token</pre> with your bot token.
+
 ## Commands list
 
-/start - Call the bot<br>
-/help - Help message<br>
-/date - Current date and time<br>
 /bitcoin - Current info about bitcoin<br>
-/echo - Print command 
+/cep [CEP Number] - Info about [CEP Number] address<br>
+/date - Current date and time<br>
+/echo [Whatever] - Print Whatever<br>
+/help - Help message<br>
+/start - Call the bot<br>

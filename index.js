@@ -1,9 +1,36 @@
 const bot = require('./src/bot')
 const response = require('./src/response')
 
-bot.onText(/\/start/, (msg) => {
+bot.onText(/\/bitcoin/, (msg) => {
   const chatId = msg.chat.id
-  const resp = response.start
+  const resp = response.bitcoin()
+
+  resp
+    .then((res) => {
+      bot.sendMessage(chatId, JSON.stringify(res.data))
+    })
+})
+
+bot.onText(/\/cep (.+)/, (msg, match) => {
+  const chatId = msg.chat.id
+  const resp = response.cep(match[1])
+
+  resp
+    .then((res) => {
+      bot.sendMessage(chatId, JSON.stringify(res.data))
+    })
+})
+
+bot.onText(/\/date/, (msg) => {
+  const chatId = msg.chat.id
+  const resp = response.date()
+
+  bot.sendMessage(chatId, resp)
+})
+
+bot.onText(/\/echo (.+)/, (msg, match) => {
+  const chatId = msg.chat.id
+  const resp = response.echo(match)
 
   bot.sendMessage(chatId, resp)
 })
@@ -15,26 +42,9 @@ bot.onText(/\/help/, (msg) => {
   bot.sendMessage(chatId, resp)
 })
 
-bot.onText(/\/date/, (msg) => {
+bot.onText(/\/start/, (msg) => {
   const chatId = msg.chat.id
-  const resp = response.date()
-
-  bot.sendMessage(chatId, resp)
-})
-
-bot.onText(/\/bitcoin/, (msg) => {
-  const chatId = msg.chat.id
-  const resp = response.bitcoin()
-
-  resp
-    .then((response) => {
-      bot.sendMessage(chatId, JSON.stringify(response.data))
-    })
-})
-
-bot.onText(/\/echo (.+)/, (msg, match) => {
-  const chatId = msg.chat.id
-  const resp = response.echo(match)
+  const resp = response.start
 
   bot.sendMessage(chatId, resp)
 })
