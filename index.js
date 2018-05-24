@@ -1,24 +1,18 @@
 const bot = require('./src/bot')
 const response = require('./src/response')
 
-bot.onText(/\/bitcoin/, (msg) => {
+bot.onText(/\/bitcoin/, async (msg) => {
   const chatId = msg.chat.id
-  const resp = response.bitcoin()
+  const resp = await response.bitcoin()
 
-  resp
-    .then((res) => {
-      bot.sendMessage(chatId, JSON.stringify(res.data))
-    })
+  bot.sendMessage(chatId, resp)
 })
 
-bot.onText(/\/cep (.+)/, (msg, match) => {
+bot.onText(/\/cep (.+)/, async (msg, match) => {
   const chatId = msg.chat.id
-  const resp = response.cep(match[1])
+  const resp = await response.cep(match[1])
 
-  resp
-    .then((res) => {
-      bot.sendMessage(chatId, JSON.stringify(res.data))
-    })
+  bot.sendMessage(chatId, resp)
 })
 
 bot.onText(/\/date/, (msg) => {
