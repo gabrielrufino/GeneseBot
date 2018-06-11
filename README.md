@@ -7,13 +7,13 @@ The general purpose chatbot.
 ## Install
 
 <pre>
-  git clone https://github.com/gabrielrufino/GeneseBot
-  cd GeneseBot
-  npm install
+git clone https://github.com/gabrielrufino/GeneseBot
+cd GeneseBot
+npm install
 </pre>
 
 ## Config your token
-You must create a <code>.env</code> file and define the variable <pre>TOKEN</pre> with your bot token.
+You must open the file <code>.env</code> and define the variable <code>TOKEN</code> with your bot token.
 
 Just like this:
 <pre>
