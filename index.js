@@ -39,9 +39,10 @@ bot.onText(/\/help/, (msg) => {
   bot.sendMessage(chatId, resp)
 })
 
-bot.onText(/\/start/, (msg) => {
+bot.onText(/\/start/, async (msg) => {
   const chatId = msg.chat.id
   const resp = response.start
 
-  bot.sendMessage(chatId, resp)
+  await bot.sendPhoto(chatId, resp.profile)
+  bot.sendMessage(chatId, resp.message)
 })

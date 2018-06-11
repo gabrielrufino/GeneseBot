@@ -18,9 +18,24 @@ const date = () => Date()
 
 const echo = (match) => match[1]
 
-const help = 'How can i help you?'
+const help = `
+Hey, how can i help you?
 
-const start = 'Hey! My name is GeneseBot and i\'m a chatbot ready to the hard work... any work :D Nice to meet you!'
+GeneseBot understands the following commands:
+
+/bitcoin - Current info about bitcoin
+/cep [CEP Number] - Info about [CEP Number] address
+/date - Current date and time
+/echo [Whatever] - Print Whatever
+/help - Help message
+/start - Call the bot
+
+`
+
+const start = {
+  profile: './public/imgs/profile.jpg',
+  message: 'Hello! My name is GeneseBot and i\'m a chatbot ready to the hard work... any work :D Nice to meet you!'
+}
 
 module.exports = {
   bitcoin,
