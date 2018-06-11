@@ -12,8 +12,20 @@ The general purpose chatbot.
   npm install
 </pre>
 
-## Put your token
-You must open the file src/bot.js and fill in the variable <pre>token</pre> with your bot token.
+## Config your token
+You must create a <code>.env</code> file and define the variable <pre>TOKEN</pre> with your bot token.
+
+Just like this:
+<pre>
+TOKEN=YOUR_TOKEN_HERE
+</pre>
+
+## Start GeneseBot
+
+Now, you can run the bot:
+<pre>
+npm start
+</pre>
 
 ## Commands list
 

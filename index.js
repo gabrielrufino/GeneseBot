@@ -1,3 +1,6 @@
+const dotenv = require('dotenv')
+dotenv.config()
+
 const bot = require('./src/bot')
 const response = require('./src/response')
 
