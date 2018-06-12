@@ -37,11 +37,12 @@ module.exports = () => {
     bot.sendMessage(chatId, resp)
   })
   
-  bot.onText(/\/start/, async (msg) => {
+  bot.onText(/\/start/, (msg) => {
     const chatId = msg.chat.id
-    const resp = response.start
-  
-    await bot.sendPhoto(chatId, resp.profile)
-    bot.sendMessage(chatId, resp.message)
+    const resp = response.start(msg)
+
+    bot.sendPhoto(chatId, resp.profile, {
+      caption: resp.message
+    })
   })
 }
