@@ -32,7 +32,7 @@ module.exports = () => {
         log.request('date')
       })
   })
-  
+
   bot.onText(/\/echo (.+)/, (msg, match) => {
     const chatId = msg.chat.id
     const resp = response.echo(match)
