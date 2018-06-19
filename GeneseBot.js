@@ -43,6 +43,16 @@ module.exports = () => {
       })
   })
   
+  bot.onText(/\/github (.+)/, async (msg, match) => {
+    const chatId = msg.chat.id
+    const resp = await response.github(match)
+
+    bot.sendMessage(chatId, resp)
+      .then(() => {
+        log.request('github')
+      })
+  })
+
   bot.onText(/\/help/, (msg) => {
     const chatId = msg.chat.id
     const resp = response.help
