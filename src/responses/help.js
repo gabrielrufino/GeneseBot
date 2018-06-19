@@ -7,6 +7,7 @@ GeneseBot understands the following commands:
 /cep [CEP Number] - Info about [CEP Number] address
 /date - Current date and time
 /echo [Whatever] - Print Whatever
+/github [user] - Info about user's github
 /help - Help message
 /start - Call the bot
 

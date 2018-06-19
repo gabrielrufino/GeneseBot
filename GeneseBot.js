@@ -47,7 +47,7 @@ module.exports = () => {
     const chatId = msg.chat.id
     const resp = await response.github(match)
 
-    bot.sendMessage(chatId, resp)
+    bot.sendPhoto(chatId, resp.image, {caption: resp.message})
       .then(() => {
         log.request('github')
       })
