@@ -42,6 +42,16 @@ module.exports = () => {
         log.request('echo')
       })
   })
+
+  bot.onText(/\/fib (.+)/, (msg, match) => {
+    const chatId = msg.chat.id
+    const resp = response.fib(match)
+
+    bot.sendMessage(chatId, resp)
+      .then(() => {
+        log.request('fib')
+      })
+  })
   
   bot.onText(/\/github (.+)/, async (msg, match) => {
     const chatId = msg.chat.id
