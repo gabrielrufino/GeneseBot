@@ -6,26 +6,26 @@ The general purpose chatbot.
 
 ## Install
 
-<pre>
+```
 git clone https://github.com/gabrielrufino/GeneseBot
 cd GeneseBot
 npm install
-</pre>
+```
 
 ## Config your token
 You must open the file <code>.env</code> and define the variable <code>TOKEN</code> with your bot token.
 
 Just like this:
-<pre>
+```
 TOKEN=YOUR_TOKEN_HERE
-</pre>
+```
 
 ## Start GeneseBot
 
 Now, you can run the bot:
-<pre>
+```
 npm start
-</pre>
+```
 
 ## Commands list
 
@@ -37,6 +37,7 @@ npm start
 /start - Call the bot<br>
 
 ## Open the docs
+
 ```
 npm docs
 ```
