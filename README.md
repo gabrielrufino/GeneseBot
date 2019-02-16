@@ -35,3 +35,8 @@ npm start
 /echo [Whatever] - Print Whatever<br>
 /help - Help message<br>
 /start - Call the bot<br>
+
+## Open the docs
+```
+npm docs
+```
