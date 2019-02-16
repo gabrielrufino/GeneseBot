@@ -1,5 +1,4 @@
-const dotenv = require('dotenv')
-const GeneseBot = require('./GeneseBot')
+require('dotenv').config()
 
-dotenv.config()
+const GeneseBot = require('./GeneseBot')
 GeneseBot()
