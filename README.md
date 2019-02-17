@@ -18,6 +18,13 @@ You must copy the file `.env.example` to `.env` and edit some variables.
 ## Start GeneseBot
 
 Now, you can run the bot:
+
+Development:
+```
+npm run dev
+```
+
+Production:
 ```
 npm start
 ```
