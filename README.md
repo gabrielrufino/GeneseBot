@@ -1,6 +1,6 @@
 # GeneseBot
 
-The general purpose chatbot.
+Where ideas for chatbots are born.
 
 ![GeneseBot's Picture](https://cdn.pixabay.com/photo/2016/02/22/00/25/robot-1214536_960_720.png)
 
