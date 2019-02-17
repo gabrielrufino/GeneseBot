@@ -1,5 +1,5 @@
 module.exports = () => {
-  const bot = require('./src/bot')
+  const bot = require('./init/bot')
   const log = require('./src/log')
   const response = require('./src/response')  
 
