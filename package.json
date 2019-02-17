@@ -15,7 +15,11 @@
     "chatbot",
     "Telegram"
   ],
-  "author": "Gabriel Rufino",
+  "author": {
+    "name": "Gabriel Rufino",
+    "email": "contato@gabrielrufino.com",
+    "url": "https://www.gabrielrufino.com"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/gabrielrufino/GeneseBot/issues"
