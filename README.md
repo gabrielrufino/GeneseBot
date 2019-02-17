@@ -7,18 +7,13 @@ Where ideas for chatbots are born.
 ## Install
 
 ```
-git clone https://github.com/gabrielrufino/GeneseBot
+git clone https://github.com/gabrielrufino/GeneseBot.git
 cd GeneseBot
 npm install
 ```
 
-## Config your token
-You must open the file <code>.env</code> and define the variable <code>TOKEN</code> with your bot token.
-
-Just like this:
-```
-TOKEN=YOUR_TOKEN_HERE
-```
+## Environment variables
+You must copy the file `.env.example` to `.env` and edit some variables.
 
 ## Start GeneseBot
 
