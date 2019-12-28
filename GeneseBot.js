@@ -1,32 +1,32 @@
 module.exports = () => {
   const bot = require('./init/bot')
   const log = require('./src/log')
-  const response = require('./src/response')  
+  const response = require('./src/response')
 
   bot.onText(/\/bitcoin/, async (msg) => {
     const chatId = msg.chat.id
     const resp = await response.bitcoin()
-  
+
     bot.sendMessage(chatId, resp)
       .then(() => {
         log.request('bitcoin')
       })
   })
-  
+
   bot.onText(/\/cep (.+)/, async (msg, match) => {
     const chatId = msg.chat.id
     const resp = await response.cep(match[1])
-  
+
     bot.sendMessage(chatId, resp)
       .then(() => {
         log.request('cep')
       })
   })
-  
+
   bot.onText(/\/date/, (msg) => {
     const chatId = msg.chat.id
     const resp = response.date()
-  
+
     bot.sendMessage(chatId, resp)
       .then(() => {
         log.request('date')
@@ -36,7 +36,7 @@ module.exports = () => {
   bot.onText(/\/echo (.+)/, (msg, match) => {
     const chatId = msg.chat.id
     const resp = response.echo(match)
-  
+
     bot.sendMessage(chatId, resp)
       .then(() => {
         log.request('echo')
@@ -52,12 +52,12 @@ module.exports = () => {
         log.request('fib')
       })
   })
-  
+
   bot.onText(/\/github (.+)/, async (msg, match) => {
     const chatId = msg.chat.id
     const resp = await response.github(match)
 
-    bot.sendPhoto(chatId, resp.image, {caption: resp.message})
+    bot.sendPhoto(chatId, resp.image, { caption: resp.message })
       .then(() => {
         log.request('github')
       })
@@ -66,18 +66,18 @@ module.exports = () => {
   bot.onText(/\/help/, (msg) => {
     const chatId = msg.chat.id
     const resp = response.help
-  
+
     bot.sendMessage(chatId, resp)
       .then(() => {
         log.request('help')
       })
   })
-  
+
   bot.onText(/\/start/, (msg) => {
     const chatId = msg.chat.id
     const resp = response.start(msg)
 
-    bot.sendPhoto(chatId, resp.profile, {caption: resp.message})
+    bot.sendPhoto(chatId, resp.profile, { caption: resp.message })
       .then(() => {
         log.request('start')
       })
