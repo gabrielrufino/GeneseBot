@@ -1,8 +1,6 @@
 const axios = require('axios')
 
-const github = async (match) => {
-  const user = match[1]
-
+const github = async user => {
   const { data } = await axios.get(`https://api.github.com/users/${user}`)
   const resp = {
     image: data.avatar_url,

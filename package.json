@@ -35,9 +35,7 @@
   "homepage": "https://github.com/gabrielrufino/GeneseBot#readme",
   "dependencies": {
     "axios": "^0.18.1",
-    "chalk": "^2.4.1",
     "dotenv": "^6.0.0",
-    "node-telegram-bot-api": "^0.30.0",
     "telegraf": "^3.34.1"
   },
   "devDependencies": {

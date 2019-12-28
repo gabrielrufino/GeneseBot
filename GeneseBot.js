@@ -1,85 +1,63 @@
 module.exports = () => {
   const bot = require('./init/bot')
-  const log = require('./src/log')
   const response = require('./src/response')
 
-  bot.onText(/\/bitcoin/, async (msg) => {
-    const chatId = msg.chat.id
+  bot.command('bitcoin', async context => {
     const resp = await response.bitcoin()
 
-    bot.sendMessage(chatId, resp)
-      .then(() => {
-        log.request('bitcoin')
-      })
+    context.reply(resp)
   })
 
-  bot.onText(/\/cep (.+)/, async (msg, match) => {
-    const chatId = msg.chat.id
-    const resp = await response.cep(match[1])
+  bot.command('cep', async context => {
+    const cep = context.update.message.text.split(' ')[1]
+    const resp = await response.cep(cep)
 
-    bot.sendMessage(chatId, resp)
-      .then(() => {
-        log.request('cep')
-      })
+    context.reply(resp)
   })
 
-  bot.onText(/\/date/, (msg) => {
-    const chatId = msg.chat.id
+  bot.command('date', context => {
     const resp = response.date()
 
-    bot.sendMessage(chatId, resp)
-      .then(() => {
-        log.request('date')
-      })
+    context.reply(resp)
   })
 
-  bot.onText(/\/echo (.+)/, (msg, match) => {
-    const chatId = msg.chat.id
-    const resp = response.echo(match)
+  bot.command('echo', context => {
+    const text = context.update.message.text.split(' ').slice(1).join(' ')
+    const resp = text
 
-    bot.sendMessage(chatId, resp)
-      .then(() => {
-        log.request('echo')
-      })
+    context.reply(resp)
   })
 
-  bot.onText(/\/fib (.+)/, (msg, match) => {
-    const chatId = msg.chat.id
-    const resp = response.fib(match)
+  bot.command('fib', async context => {
+    const number = context.update.message.text.split(' ')[1]
+    const resp = response.fib(Number(number))
 
-    bot.sendMessage(chatId, resp)
-      .then(() => {
-        log.request('fib')
-      })
+    context.reply(resp)
   })
 
-  bot.onText(/\/github (.+)/, async (msg, match) => {
-    const chatId = msg.chat.id
-    const resp = await response.github(match)
+  bot.command('github', async context => {
+    const user = context.update.message.text.split(' ')[1]
 
-    bot.sendPhoto(chatId, resp.image, { caption: resp.message })
-      .then(() => {
-        log.request('github')
-      })
+    const resp = await response.github(user)
+    console.log(resp)
+    context.replyWithPhoto({
+      url: resp.image
+    }, {
+      caption: resp.message
+    })
   })
 
-  bot.onText(/\/help/, (msg) => {
-    const chatId = msg.chat.id
+  bot.command('help', context => {
     const resp = response.help
 
-    bot.sendMessage(chatId, resp)
-      .then(() => {
-        log.request('help')
-      })
+    context.reply(resp)
   })
 
-  bot.onText(/\/start/, (msg) => {
-    const chatId = msg.chat.id
-    const resp = response.start(msg)
+  bot.start(context => {
+    const resp = response.start()
 
-    bot.sendPhoto(chatId, resp.profile, { caption: resp.message })
-      .then(() => {
-        log.request('start')
-      })
+    context.reply(resp)
   })
+
+  bot.launch()
 }

@@ -6,9 +6,8 @@ const calc = (n) => {
   return calc(n - 1) + calc(n - 2)
 }
 
-const fib = (match) => {
-  const n = match[1]
-  const resp = `fib(${n}) = ${calc(n)}`
+const fib = number => {
+  const resp = `fib(${number}) = ${calc(number)}`
 
   return resp
 }
