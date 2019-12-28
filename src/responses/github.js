@@ -7,17 +7,17 @@ const github = async (match) => {
   const resp = {
     image: data.avatar_url,
     message: `
-			${data.name}
-			${data.bio}
+${data.name}
+${data.bio}
 
-			From: ${data.location}
-			Followers: ${data.followers}
-			Following: ${data.following}
-			Blog: ${data.blog}
+From: ${data.location}
+Followers: ${data.followers}
+Following: ${data.following}
+Blog: ${data.blog}
 
-			Repositories: ${data.public_repos}
-			Gists: ${data.public_gists}
-		`
+Repositories: ${data.public_repos}
+Gists: ${data.public_gists}
+`
   }
 
   return resp
