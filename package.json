@@ -7,7 +7,13 @@
     "dev": "nodemon index",
     "standard": "standard",
     "start": "node index",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --passWithNoTests"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm standard",
+      "pre-push": "npm test"
+    }
   },
   "repository": {
     "type": "git",
@@ -34,6 +40,8 @@
     "node-telegram-bot-api": "^0.30.0"
   },
   "devDependencies": {
+    "husky": "^3.1.0",
+    "jest": "^24.9.0",
     "nodemon": "^1.18.10",
     "standard": "^14.3.1"
   }
