@@ -4,7 +4,7 @@
   "description": "Where ideas for chatbots are born.",
   "main": "index.js",
   "scripts": {
-    "dev": "node ./node_modules/nodemon/bin/nodemon index",
+    "dev": "nodemon index",
     "start": "node index",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
