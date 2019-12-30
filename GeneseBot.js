@@ -1,3 +1,5 @@
+const whois = require('whois')
+
 module.exports = () => {
   const bot = require('./init/bot')
   const response = require('./src/response')
@@ -51,6 +53,18 @@ module.exports = () => {
     const resp = response.help
 
     context.reply(resp)
+  })
+
+  bot.command('whois', context => {
+    const host = context.update.message.text.split(' ')[1]
+
+    whois.lookup(host, (error, data) => {
+      if (error) {
+        return context.reply('Error')
+      }
+
+      return context.replyWithMarkdown(`\`\`\`${data}\`\`\``)
+    })
   })
 
   bot.start(context => {
