@@ -8,8 +8,8 @@ app.get('/', (_, res) => {
   })
 })
 
-const { API_PORT } = process.env
+const { PORT } = process.env
 
-app.listen(API_PORT, () => {
-  console.log('API is alive!')
+app.listen(PORT, () => {
+  console.log(`API is listening on ${PORT}!`)
 })
