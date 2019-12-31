@@ -1,8 +1,10 @@
 const axios = require('axios')
 
-const github = async user => {
+const github = async context => {
+  const user = context.update.message.text.split(' ')[1]
   const { data } = await axios.get(`https://api.github.com/users/${user}`)
-  const resp = {
+
+  const response = {
     image: data.avatar_url,
     message: `
 ${data.name}
@@ -18,7 +20,7 @@ Gists: ${data.public_gists}
 `
   }
 
-  return resp
+  context.replyWithPhoto({ url: response.image }, { caption: response.message })
 }
 
 module.exports = github
