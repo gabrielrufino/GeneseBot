@@ -7,6 +7,7 @@ const github = require('./github')
 const help = require('./help')
 const ping = require('./ping')
 const start = require('./start')
+const time = require('./time')
 const whois = require('./whois')
 
 const router = [
@@ -53,6 +54,11 @@ const router = [
   {
     command: 'start',
     handler: start,
+    description: ''
+  },
+  {
+    command: 'time',
+    handler: time,
     description: ''
   },
   {
