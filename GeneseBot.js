@@ -7,7 +7,7 @@ module.exports = () => {
 
   bot.launch()
     .then(() => {
-      console.log('GeneseBot is listening on Telegram!')
+      console.log('Bot is listening on Telegram!')
     })
     .catch(error => {
       console.error(error)

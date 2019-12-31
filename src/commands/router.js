@@ -5,6 +5,7 @@ const echo = require('./echo')
 const fib = require('./fib')
 const github = require('./github')
 const help = require('./help')
+const ping = require('./ping')
 const start = require('./start')
 const whois = require('./whois')
 
@@ -42,6 +43,11 @@ const router = [
   {
     command: 'help',
     handler: help,
+    description: ''
+  },
+  {
+    command: 'ping',
+    handler: ping,
     description: ''
   },
   {
