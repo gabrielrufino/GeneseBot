@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index",
+    "generate-commands": "node src/scripts/generate-commands",
     "standard": "standard",
     "start": "node index",
     "test": "jest --passWithNoTests"
