@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index",
+    "forever": "forever",
     "generate-commands": "node src/scripts/generate-commands",
     "standard": "standard",
-    "start": "node index",
+    "start": "forever index.js",
     "test": "jest --passWithNoTests"
   },
   "husky": {
@@ -38,6 +39,7 @@
     "axios": "^0.18.1",
     "dotenv": "^6.0.0",
     "express": "^4.17.1",
+    "forever": "^1.0.0",
     "moment": "^2.24.0",
     "ping": "^0.2.2",
     "telegraf": "^3.34.1",
