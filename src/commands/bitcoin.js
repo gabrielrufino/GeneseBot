@@ -1,8 +1,9 @@
 const axios = require('axios')
 
-const bitcoin = async () => {
+const bitcoin = async context => {
   const { data } = await axios.get('https://www.mercadobitcoin.net/api/BTC/ticker')
-  const resp = `
+
+  const response = `
     Mecado Bitcoin
 
     High: ${data.ticker.high}
@@ -13,7 +14,7 @@ const bitcoin = async () => {
     Sell: ${data.ticker.sell}
   `
 
-  return resp
+  context.reply(response)
 }
 
 module.exports = bitcoin

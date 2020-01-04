@@ -1,8 +1,10 @@
 const axios = require('axios')
 
-const cep = async (number) => {
+const cep = async context => {
+  const number = context.update.message.text.split(' ')[1]
+
   const { data } = await axios.get(`https://viacep.com.br/ws/${number}/json/`)
-  const resp = `
+  const response = `
     ${data.logradouro}
 
     Estado: ${data.uf}
@@ -10,7 +12,7 @@ const cep = async (number) => {
     Cidade: ${data.localidade}
   `
 
-  return resp
+  context.reply(response)
 }
 
 module.exports = cep
