@@ -13,7 +13,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run standard",
+      "pre-commit": "git-branch-is --not master && npm run standard",
       "pre-push": "npm test"
     }
   },
@@ -46,6 +46,7 @@
     "whois": "^2.11.0"
   },
   "devDependencies": {
+    "git-branch-is": "^3.1.0",
     "husky": "^3.1.0",
     "jest": "^24.9.0",
     "nodemon": "^1.18.10",
