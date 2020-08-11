@@ -11,6 +11,7 @@ const handler = context => {
         context.replyWithMarkdown(`\`\`\`${result.output}\`\`\``)
       }
     })
+    .catch(console.error)
 }
 
 module.exports = handler
